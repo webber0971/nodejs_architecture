@@ -1,0 +1,40 @@
+1.開啟一個nodejs專案 
+
+    建立一個package.json文件，其中含項目基本訊息
+    npm init -y 
+
+    安裝express
+    npm install express
+
+    建立 express 應用 app.js 、 index.js等等
+
+
+
+2.套件建立 express 專案
+    建立一個基本架構專案
+    npx express-generator my-express-app
+
+    設定前端模板引擎 templating engine
+    npm install ejs
+
+    const express = require('express');
+    const app = express();
+
+    // 设置 EJS 为模板引擎
+    app.set('view engine', 'ejs');
+
+    // 指定模板文件存放的目录
+    app.set('views', path.join(__dirname, 'views'));
+
+    // 指定静态文件存放目录
+    app.get('/', (req, res) => {
+        res.render('index');
+    });
+
+
+
+    在 views 目录下创建一个 EJS 模板文件，例如 index.ejs。
+
+
+npm start
+如果要hot reload 可以安裝nodemon
